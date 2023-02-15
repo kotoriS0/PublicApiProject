@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        getCharacterAscensionMateials()
     }
 
     fun getArtifactDataByNameApiCall(name: String) {
@@ -40,4 +40,24 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+    fun getCharacterAscensionMateials() {
+        val dataService = RetrofitHelper.getInstance().create(DataService:: class.java)
+        val characterAscensionMaterialsDataCall = dataService.getCharacterAscensionMaterials()
+
+        characterAscensionMaterialsDataCall.enqueue(object : Callback<Map<MaterialCharacterAscensionData, String>> {
+            override fun onResponse(
+                call: Call<Map<MaterialCharacterAscensionData, String>>,
+                response: Response<Map<MaterialCharacterAscensionData, String>>
+            ) {
+                Log.d(TAG, "onResponse: ${response.body()}")
+            }
+
+            override fun onFailure(call: Call<Map<MaterialCharacterAscensionData, String>>, t: Throwable) {
+                Log.d(TAG, "onFailure: ${t.message}")
+            }
+        })
+    }
+
+
 }
