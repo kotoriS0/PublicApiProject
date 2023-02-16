@@ -7,6 +7,10 @@ import retrofit2.http.Path
 interface DataService {
     // functions to retrieve data from endpoints
 
+    @GET(".")
+    fun getMainCategories(
+    ) : Call<Map<String, List<String>>>
+
     @GET("artifacts")
     fun getArtifactNames(
     ) : Call<List<String>>
@@ -66,5 +70,5 @@ interface DataService {
 
     @GET("materials/character-ascension")
     fun getCharacterAscensionMaterials(
-    ) : Call<Map<String, MaterialCharacterAscensionData>>
+    ) : Call<Map<String, Map<String, MaterialCharacterAscensionData>>>
 }

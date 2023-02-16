@@ -3,6 +3,8 @@ package com.example.publicapiproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.publicapiproject.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -14,13 +16,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityMainBinding
+    lateinit var adapter: MainCategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getCharacterAscensionMateials()
+        getMainCategoriesApiCall()
+    }
+
+    private fun getMainCategoriesApiCall() {
+        val dataService = RetrofitHelper.getInstance().create(DataService:: class.java)
+        val categoriesDataCall = dataService.getMainCategories()
+
+        categoriesDataCall.enqueue(object: Callback<Map<String, List<String>>> {
+            override fun onResponse(
+                call: Call<Map<String, List<String>>>,
+                response: Response<Map<String, List<String>>>) {
+                Log.d(TAG, "onResponse: ${response.body()}")
+                if(response.body() != null) {
+                    adapter = MainCategoryAdapter(response.body())
+                }
+                binding.recyclerViewMain.adapter = adapter
+                binding.recyclerViewMain.layoutManager = LinearLayoutManager(this@MainActivity)
+            }
+
+            override fun onFailure(call: Call<Map<String, List<String>>>, t: Throwable) {
+                Log.d(TAG, "onFailure: ${t.message}")
+            }
+        })
     }
 
     fun getArtifactDataByNameApiCall(name: String) {
@@ -32,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 call: Call<ArtifactData>,
                 response: Response<ArtifactData>
             ) {
-                Log.d(TAG, "onResponse: ${response.body()}")
+                //Log.d(TAG, "onResponse: ${response.body()}")
             }
 
             override fun onFailure(call: Call<ArtifactData>, t: Throwable) {
@@ -45,15 +70,15 @@ class MainActivity : AppCompatActivity() {
         val dataService = RetrofitHelper.getInstance().create(DataService:: class.java)
         val characterAscensionMaterialsDataCall = dataService.getCharacterAscensionMaterials()
 
-        characterAscensionMaterialsDataCall.enqueue(object : Callback<Map<MaterialCharacterAscensionData, String>> {
+        characterAscensionMaterialsDataCall.enqueue(object : Callback<Map<String, Map<String, MaterialCharacterAscensionData>>> {
             override fun onResponse(
-                call: Call<Map<MaterialCharacterAscensionData, String>>,
-                response: Response<Map<MaterialCharacterAscensionData, String>>
+                call: Call<Map<String, Map<String, MaterialCharacterAscensionData>>>,
+                response: Response<Map<String, Map<String, MaterialCharacterAscensionData>>>
             ) {
-                Log.d(TAG, "onResponse: ${response.body()}")
+                //Log.d(TAG, "onResponse: ${response.body()}")
             }
 
-            override fun onFailure(call: Call<Map<MaterialCharacterAscensionData, String>>, t: Throwable) {
+            override fun onFailure(call: Call<Map<String, Map<String, MaterialCharacterAscensionData>>>, t: Throwable) {
                 Log.d(TAG, "onFailure: ${t.message}")
             }
         })
