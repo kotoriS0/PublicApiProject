@@ -1,6 +1,5 @@
 package com.example.publicapiproject
 
-import android.os.Build.VERSION_CODES.M
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
