@@ -9,6 +9,7 @@ import com.example.publicapiproject.databinding.ActivitySecondListBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class SecondListActivity : AppCompatActivity() {
     companion object {
@@ -38,17 +39,12 @@ class SecondListActivity : AppCompatActivity() {
                 call: Call<List<String>>,
                 response: Response<List<String>>
             ) {
-                Log.d(TAG, "onResponse: ${response.body()}")
+                Log.d(TAG, "onResponse: ${response.body()} : $category")
                 if(response.body() != null) {
-                    var itemList : MutableList<String>
-                    for(item in response.body()!!) {
-                        when(category) {
-                            "artifact" -> {
-                                //add item for each type                            }
-                        }
-                    }
-                    adapter = SecondListAdapter(response.body())
+                    // add a blank mutable list
+                    adapter = SecondListAdapter(getCorrectNamesForCategory(response.body()!!))
                 }
+
                 binding.recyclerViewSecondList.adapter = adapter
                 binding.recyclerViewSecondList.layoutManager = LinearLayoutManager(this@SecondListActivity)
             }
@@ -57,6 +53,47 @@ class SecondListActivity : AppCompatActivity() {
                 Log.d(TAG, "onFailure: ${t.message}")
             }
         })
+    }
+
+    private fun getCorrectNamesForCategory(list : List<String>) {
+        //var itemList = mutableListOf("")
+        for (item in list) {
+            when (category) {
+                "Artifacts" -> {
+                    val dataService = RetrofitHelper.getInstance().create(DataService:: class.java)
+                    val artifactDataCall = dataService.getArtifactDataByName(item.toLowerCase())
+                    artifactDataCall.enqueue(object : Callback<ArtifactData> {
+                        override fun onResponse(
+                            call: Call<ArtifactData>,
+                            response: Response<ArtifactData>
+                        ) {
+                            Log.d(TAG, "getCorrectNames onResponse: ${response.body()?.name} : ${adapter.dataSet}")
+                            //itemList.add(response.body()?.name!!)
+                            adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
+
+                        }
+
+                        override fun onFailure(call: Call<ArtifactData>, t: Throwable) {
+                            Log.d(TAG, "onFailure: ${t.message}")
+                        }
+                    })
+                }
+                "Characters" -> {
+
+                }
+                else -> {
+
+                }
+                //add item for each type                            }
+            }
+        }
+        //Log.d(TAG, "getCorrectNamesForCategory $itemList")
+        //itemList.remove("")
+//        var immutableList: List<String> = itemList
+        //immutableList = immutableList.sortedBy { it }
+        //return itemList
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.publicapiproject
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
-class SecondListAdapter(var dataSet: List<String>?) : RecyclerView.Adapter<SecondListAdapter.ViewHolder>() {
+class SecondListAdapter(var dataSet: MutableList<String>?) : RecyclerView.Adapter<SecondListAdapter.ViewHolder>() {
     companion object {
         val EXTRA_ITEM = "item"
     }
