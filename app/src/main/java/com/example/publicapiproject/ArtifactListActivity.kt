@@ -37,7 +37,7 @@ class ArtifactListActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<String>>, t: Throwable) {
-                Log.d(MainActivity.TAG, "onFailure: ${t.message}")
+                Log.d(TAG, "onFailure: ${t.message}")
             }
         })
     }

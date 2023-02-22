@@ -11,6 +11,12 @@ interface DataService {
     fun getMainCategories(
     ) : Call<Map<String, List<String>>>
 
+    // for artifacts, characters, domains, elements, & enemies
+    @GET("{list}")
+    fun getListOfNamesByType(
+        @Path("list") list: String
+    ) : Call<List<String>>
+
     @GET("artifacts")
     fun getArtifactNames(
     ) : Call<List<String>>
