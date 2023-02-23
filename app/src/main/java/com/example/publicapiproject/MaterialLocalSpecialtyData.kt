@@ -4,9 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class MaterialCharacterAscensionData(
+data class MaterialLocalSpecialtyData(
     val id: String?,
     val name: String?,
-    val sources: List<String>,
-    val rarity: Int?
+    val characters: List<String>?
 ) : Parcelable

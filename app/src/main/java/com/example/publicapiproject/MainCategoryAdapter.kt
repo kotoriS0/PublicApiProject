@@ -35,19 +35,12 @@ class MainCategoryAdapter(var dataSet: Map<String, List<String>>?) : RecyclerVie
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val category = dataSet?.get("types")?.get(position)?.capitalize()
         viewHolder.textViewCategory.text = category
+
         viewHolder.layout.setOnClickListener {
             //Toast.makeText(it.context, category, Toast.LENGTH_SHORT).show()
-            when(viewHolder.textViewCategory.text) {
-                "Artifacts" -> {
-                    val detailIntent = Intent(it.context, SecondListActivity::class.java)
-                    detailIntent.putExtra(EXTRA_CATEGORY, category)
-                    it.context.startActivity(detailIntent)
-                }
-                else -> {
-
-                }
-            }
-
+            val detailIntent = Intent(it.context, SecondListActivity::class.java)
+            detailIntent.putExtra(EXTRA_CATEGORY, category)
+            it.context.startActivity(detailIntent)
         }
     }
 

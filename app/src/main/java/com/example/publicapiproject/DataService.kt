@@ -17,18 +17,10 @@ interface DataService {
         @Path("list") list: String
     ) : Call<List<String>>
 
-    @GET("artifacts")
-    fun getArtifactNames(
-    ) : Call<List<String>>
-
     @GET("artifacts/{name}")
     fun getArtifactDataByName(
         @Path("name") name: String
     ) : Call<ArtifactData>
-
-    @GET("characters")
-    fun getCharacterNames(
-    ) : Call<List<String>>
 
     @GET("characters/{name}")
     fun getCharacterDataByName(
@@ -37,33 +29,21 @@ interface DataService {
 
     @GET("consumables/food")
     fun getConsumablesFood(
-    ) : Call<List<ConsumablesFoodData>>
+    ) : Call<Map<String, ConsumablesFoodData>>
 
     @GET("consumables/potions")
     fun getConsumablesPotions(
-    ) : Call<List<ConsumablesPotionsData>>
-
-    @GET("domains")
-    fun getDomainNames(
-    ) : Call<List<String>>
+    ) : Call<Map<String, ConsumablesPotionsData>>
 
     @GET("domains/{name}")
     fun getDomainDataByName(
         @Path("name") name: String
     ) : Call<DomainData>
 
-    @GET("elements")
-    fun getElementNames(
-    ) : Call<List<String>>
-
     @GET("elements/{name}")
     fun getElementDataByName(
         @Path("name") name: String
     ) : Call<ElementData>
-
-    @GET("enemies")
-    fun getEnemyNames(
-    ) : Call<List<String>>
 
     @GET("enemies/{name}")
     fun getEnemyDataByName(
@@ -72,9 +52,47 @@ interface DataService {
 
     @GET("materials/boss-material")
     fun getBossMaterials(
-    ) : Call<List<MaterialBossData>>
+    ) : Call<Map<String, MaterialBossData>>
 
     @GET("materials/character-ascension")
     fun getCharacterAscensionMaterials(
     ) : Call<Map<String, Map<String, MaterialCharacterAscensionData>>>
+
+    @GET("materials/character-experience")
+    fun getCharacterExperienceMaterials(
+    ) : Call<Map<String, MaterialCharacterExperienceData>>
+
+    @GET("materials/common-ascension")
+    fun getCommonAscensionMaterials(
+    ) : Call<Map<String, MaterialCommonAscensionData>>
+
+    @GET("materials/cooking-ingredients")
+    fun getCookingIngredients(
+    ) : Call<Map<String, MaterialCookingIngredientData>>
+
+    @GET("materials/local-specialties")
+    fun getLocalSpecialties(
+    ) : Call<Map<String, MaterialLocalSpecialtyData>>
+
+    @GET("materials/talent-book")
+    fun getTalentBookMaterials(
+    ) : Call<Map<String, MaterialTalentBookData>>
+
+    @GET("materials/weapon-ascension")
+    fun getWeaponAscensionMaterials(
+    ) : Call<Map<String, MaterialWeaponAscensionData>>
+
+    @GET("materials/weapon-experience")
+    fun getWeaponExperienceMaterial(
+    ) : Call<Map<String, MaterialWeaponExperienceData>>
+
+    @GET("nations/{name}")
+    fun getNationDataByName(
+        @Path("name") name: String
+    ) : Call<NationData>
+
+    @GET("weapons/{name}")
+    fun getWeaponDataByName(
+        @Path("name") name: String
+    ) : Call<WeaponData>
 }
