@@ -16,6 +16,9 @@
         android:theme="@style/Theme.PublicApiProject"
         tools:targetApi="31">
         <activity
+            android:name=".ConsumablesFoodDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".SecondListActivity"
             android:exported="false" />
         <activity

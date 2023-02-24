@@ -47,42 +47,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
-    fun getArtifactDataByNameApiCall(name: String) {
-        val dataService = RetrofitHelper.getInstance().create(DataService:: class.java)
-        val artifactDataCall = dataService.getArtifactDataByName(name)
-
-        artifactDataCall.enqueue(object : Callback<ArtifactData> {
-            override fun onResponse(
-                call: Call<ArtifactData>,
-                response: Response<ArtifactData>
-            ) {
-                //Log.d(TAG, "onResponse: ${response.body()}")
-            }
-
-            override fun onFailure(call: Call<ArtifactData>, t: Throwable) {
-                Log.d(TAG, "onFailure: ${t.message}")
-            }
-        })
-    }
-
-    fun getCharacterAscensionMateials() {
-        val dataService = RetrofitHelper.getInstance().create(DataService:: class.java)
-        val characterAscensionMaterialsDataCall = dataService.getCharacterAscensionMaterials()
-
-        characterAscensionMaterialsDataCall.enqueue(object : Callback<Map<String, Map<String, MaterialCharacterAscensionData>>> {
-            override fun onResponse(
-                call: Call<Map<String, Map<String, MaterialCharacterAscensionData>>>,
-                response: Response<Map<String, Map<String, MaterialCharacterAscensionData>>>
-            ) {
-                //Log.d(TAG, "onResponse: ${response.body()}")
-            }
-
-            override fun onFailure(call: Call<Map<String, Map<String, MaterialCharacterAscensionData>>>, t: Throwable) {
-                Log.d(TAG, "onFailure: ${t.message}")
-            }
-        })
-    }
-
-
 }

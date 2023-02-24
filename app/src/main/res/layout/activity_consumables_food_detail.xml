@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConsumablesFoodDetailActivity">
+
+    <TextView
+        android:id="@+id/textView_foodDetail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="&quot;Pile 'Em Up&quot;"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_typeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Type:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_foodDetail_description"
+        app:layout_constraintTop_toBottomOf="@+id/textView_foodDetail_description" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_proficiency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="90dp"
+        android:text="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_foodDetail_proficiencyLabel" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_proficiencyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="Proficiency:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_foodDetail_proficiency"
+        app:layout_constraintTop_toTopOf="@+id/textView_foodDetail_rarity" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_effectLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Effect:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_foodDetail_typeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_foodDetail_type" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="ATK-Boosting Dish"
+        app:layout_constraintStart_toEndOf="@+id/textView_foodDetail_typeLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_foodDetail_typeLabel" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_effect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="Increases all party members' CRIT Rate by 10~20% for 300s."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_foodDetail_type"
+        app:layout_constraintTop_toTopOf="@+id/textView_foodDetail_effectLabel" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:text="A rich, meaty dish. Originally a Mondstadt dish made of steaks, potatoes, and cheese, it has since become synonymous with Ludi Harpastum."
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_foodDetail_name" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_rarityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="30dp"
+        android:text="Rarity:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_foodDetail_effectLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_foodDetail_effect" />
+
+    <TextView
+        android:id="@+id/textView_foodDetail_rarity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="3"
+        app:layout_constraintStart_toEndOf="@+id/textView_foodDetail_rarityLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_foodDetail_rarityLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

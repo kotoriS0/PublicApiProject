@@ -44,12 +44,12 @@ class SecondListActivity : AppCompatActivity() {
                 if(response.body() != null) {
                     // add a blank mutable list
                     when(category) {
-                        "Artifacts", "Characters", "Domains", "Elements", "Enemies", "Nations", "Weapons" -> {
-                            adapter = SecondListAdapter(mutableListOf<String>())
+                        in "Artifacts", "Characters", "Domains", "Elements", "Enemies", "Nations", "Weapons" -> {
+                            adapter = SecondListAdapter(mutableListOf<String>(), category, response.body()!!)
                             getCorrectNamesForCategory(response.body()!!)
                         }
                         else -> {
-
+                            adapter = SecondListAdapter(response.body()?.toMutableList(), category, response.body()!!)
                         }
                     }
                 }
@@ -79,6 +79,8 @@ class SecondListActivity : AppCompatActivity() {
                             Log.d(TAG, "getCorrectNames onResponse: ${response.body()?.name} : ${adapter.dataSet}")
                             //itemList.add(response.body()?.name!!)
                             adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
 
                         }
                         override fun onFailure(call: Call<ArtifactData>, t: Throwable) {
@@ -87,17 +89,21 @@ class SecondListActivity : AppCompatActivity() {
                     })
                 }
                 "Characters" -> {
+                    Log.d(TAG, "characters called")
                     val characterDataCall = dataService.getCharacterDataByName(item.toLowerCase())
                     characterDataCall.enqueue(object : Callback<CharacterData> {
                         override fun onResponse(
                             call: Call<CharacterData>,
                             response: Response<CharacterData>
                         ) {
+                            Log.d(TAG, "character onResponse: ${response.body()}")
                             adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
                         }
 
                         override fun onFailure(call: Call<CharacterData>, t: Throwable) {
-                            Log.d(TAG, "onFailure: ${t.message}")
+                            Log.d(TAG, "characterNameCall onFailure: ${t.message}")
                         }
                     })
                 }
@@ -109,6 +115,8 @@ class SecondListActivity : AppCompatActivity() {
                             response: Response<DomainData>
                         ) {
                             adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
                         }
 
                         override fun onFailure(call: Call<DomainData>, t: Throwable) {
@@ -124,6 +132,8 @@ class SecondListActivity : AppCompatActivity() {
                             response: Response<ElementData>
                         ) {
                             adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
                         }
 
                         override fun onFailure(call: Call<ElementData>, t: Throwable) {
@@ -139,6 +149,8 @@ class SecondListActivity : AppCompatActivity() {
                             response: Response<EnemyData>
                         ) {
                             adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
                         }
                         override fun onFailure(call: Call<EnemyData>, t: Throwable) {
                             Log.d(TAG, "onFailure: ${t.message}")
@@ -153,8 +165,9 @@ class SecondListActivity : AppCompatActivity() {
                             response: Response<NationData>
                         ) {
                             adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
                         }
-
                         override fun onFailure(call: Call<NationData>, t: Throwable) {
                             Log.d(TAG, "onFailure: ${t.message}")
                         }
@@ -162,14 +175,27 @@ class SecondListActivity : AppCompatActivity() {
                 }
                 "Weapons" -> {
                     val weaponDataCall = dataService.getWeaponDataByName(item.toLowerCase())
+                    weaponDataCall.enqueue(object : Callback<WeaponData> {
+                        override fun onResponse(
+                            call: Call<WeaponData>,
+                            response: Response<WeaponData>
+                        ) {
+                            adapter.dataSet?.add(response.body()?.name!!)
+                            adapter.dataSet?.sort()
+                            adapter.notifyDataSetChanged()
+                        }
+                        override fun onFailure(call: Call<WeaponData>, t: Throwable) {
+                            Log.d(TAG, "onFailure: ${t.message}")
+                        }
+                    })
                 }
                 else -> {
 
                 }
-                //add item for each type                            }
             }
-            adapter.dataSet?.sort()
-            adapter.notifyDataSetChanged()
+            //adapter.dataSet?.sort()
+            //adapter.notifyDataSetChanged()
+            //doesn't work here for some reason
         }
         //Log.d(TAG, "getCorrectNamesForCategory $itemList")
         //itemList.remove("")
