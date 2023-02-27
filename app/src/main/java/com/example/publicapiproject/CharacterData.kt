@@ -15,33 +15,34 @@ data class CharacterData(
     val constellation: String?,
     val birthday: String?,
     val description: String?,
-    val skillTalents: SkillTalents,
-    val passiveTalents: PassiveTalents,
-    val constellations: Constillations
+    val skillTalents: List<SkillTalent>?,
+    val passiveTalents: List<PassiveTalent>?,
+    val constellations: List<Constillation>?
 ) : Parcelable {
     @Parcelize
-    data class SkillTalents (
+    data class SkillTalent (
         val name: String?,
         val unlock: String?,
         val description: String?,
-        val upgrades: Upgrades
+        val upgrades: List<Upgrade>?,
+        val type: String?
     ) : Parcelable
 
     @Parcelize
-    data class Upgrades (
+    data class Upgrade (
         val name: String?,
         val value: String?
     ) : Parcelable
 
     @Parcelize
-    data class PassiveTalents (
+    data class PassiveTalent (
         val name: String?,
         val unlock: String?,
         val description: String?
     ) : Parcelable
 
     @Parcelize
-    data class Constillations (
+    data class Constillation (
         val name: String?,
         val unlock: String?,
         val description: String?,
