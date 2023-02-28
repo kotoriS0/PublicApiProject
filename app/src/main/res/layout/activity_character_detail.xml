@@ -6,242 +6,278 @@
     android:layout_height="match_parent"
     tools:context=".CharacterDetailActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textView_characterDetail_affiliationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Affiliation:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_affiliation"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_nation"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_nation" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textView_characterDetail_birthdayLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="Birthday:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_birthday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_rarity"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_rarity" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_visionLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Vision:"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_vision"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="147dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_vision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pyro"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_weaponLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_visionLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_visionLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_weaponLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Weapon:"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_weapon"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_vision"
-                app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_vision" />
+    <TextView
+        android:id="@+id/textView_characterDetail_weapon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Bow"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_genderLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_weaponLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_weaponLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:text="Gliding Champion"
-                app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_titleLabel"
-                app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_titleLabel" />
+    <TextView
+        android:id="@+id/textView_characterDetail_specialDishLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Special Dish:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_characterDetail_nationLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_nationLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_affiliationLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Affiliation:"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="203dp"
-                tools:layout_editor_absoluteY="181dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_passiveTalentsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passive Talents"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_constellationsLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_skillTalentsLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_skillTalentsLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_titleLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:text="Title:"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_name" />
+    <TextView
+        android:id="@+id/textView_characterDetail_titleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Title:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_title"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_name"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_name" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_specialLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Outrider's Champion Steak!"
-                tools:layout_editor_absoluteX="112dp"
-                tools:layout_editor_absoluteY="232dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female"
+        app:layout_constraintEnd_toEndOf="@+id/textView_characterDetail_description"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_genderLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_genderLabel" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                tools:layout_editor_absoluteY="543dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_specialDish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Outrider's Champion Steak!"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_specialDishLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_specialDishLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_gender"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:text="Female"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_genderLabel"
-                app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_genderLabel" />
+    <TextView
+        android:id="@+id/textView_characterDetail_genderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Gender:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_gender"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_weapon"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_weapon" />
 
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="17dp"
-                tools:layout_editor_absoluteY="301dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_nation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mondstadt"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_affiliationLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_nationLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_nationLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Amber"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_characterDetail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_passiveTalentsLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_genderLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Gender:"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_gender"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_weapon"
-                app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_weapon" />
+    <TextView
+        android:id="@+id/textView_characterDetail_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Amber"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_titleLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_rarity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                tools:layout_editor_absoluteX="87dp"
-                tools:layout_editor_absoluteY="266dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_visionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Vision:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_vision"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textView_characterDetail_description"
+        app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_description" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_birthdayLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Birthday:"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="125dp"
-                tools:layout_editor_absoluteY="266dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_affiliation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Knights of Favonius"
+        app:layout_constraintEnd_toEndOf="@+id/textView_characterDetail_gender"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_affiliationLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_affiliationLabel" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                tools:layout_editor_absoluteY="320dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_rarityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:text="Rarity:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_rarity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textView_characterDetail_specialDishLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_specialDish" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_vision"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Pyro"
-                app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_weaponLabel"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_visionLabel"
-                app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_visionLabel" />
+    <TextView
+        android:id="@+id/textView_characterDetail_constellationsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Constellations"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_passiveTalentsLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_passiveTalentsLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_nation"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Mondstadt"
-                tools:layout_editor_absoluteX="76dp"
-                tools:layout_editor_absoluteY="181dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_weaponLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Weapon:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_weapon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_vision"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_vision" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_rarityLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rarity:"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="266dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Always energetic and full of life, Amber's the best - albeit only - Outrider of the Knights of Favonius."
+        app:layout_constraintEnd_toEndOf="@+id/textView_characterDetail_title"
+        app:layout_constraintStart_toStartOf="@+id/textView_characterDetail_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_name" />
 
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="523dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_rarity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="4"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_birthdayLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_rarityLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_rarityLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_specialDishLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Special Dish:"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
-                tools:layout_editor_absoluteY="232dp" />
+    <TextView
+        android:id="@+id/textView_characterDetail_nationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Nation:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_nation"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textView_characterDetail_visionLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_visionLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_nationLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Nation:"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView_characterDetail_visionLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_visionLabel" />
+    <TextView
+        android:id="@+id/textView_characterDetail_birthday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0000-08-10"
+        app:layout_constraintEnd_toEndOf="@+id/textView_characterDetail_affiliation"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_birthdayLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_birthdayLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_weapon"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="Bow"
-                app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_genderLabel"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_weaponLabel"
-                app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_weaponLabel" />
+    <TextView
+        android:id="@+id/textView_characterDetail_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Gliding Champion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_characterDetail_titleLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_characterDetail_titleLabel" />
 
-            <TextView
-                android:id="@+id/textView_characterDetail_affiliation"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Knights of Favonius"
-                tools:layout_editor_absoluteX="284dp"
-                tools:layout_editor_absoluteY="181dp" />
-
-            <TextView
-                android:id="@+id/textView_characterDetail_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:text="Always energetic and full of life, Amber's the best - albeit only - Outrider of the Knights of Favonius."
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView_characterDetail_titleLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_title" />
-
-            <TextView
-                android:id="@+id/textView_characterDetail_birthday"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="0000-08-10"
-                tools:layout_editor_absoluteX="213dp"
-                tools:layout_editor_absoluteY="266dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    <TextView
+        android:id="@+id/textView_characterDetail_skillTalentsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Skill Talents"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_characterDetail_passiveTalentsLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_characterDetail_rarityLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
