@@ -72,11 +72,8 @@ class CharacterDetailActivity : AppCompatActivity() {
                 binding.textViewCharacterDetailRarity.text = character.rarity.toString()
                 binding.textViewCharacterDetailBirthday.text = character.birthday
 
-                if(response.body() != null) {
-                    adapter = CharacterDetailAdapter(character, "SkillTalents")
-                }
-                binding.recyclerViewCharacterDetail.adapter = adapter
-                binding.recyclerViewCharacterDetail.layoutManager = LinearLayoutManager(this@CharacterDetailActivity)
+                changeRecyclerView("Skill Talents")
+                binding.textViewCharacterDetailSkillTalentsLabel.setTextColor(Color.BLACK)
             }
 
             override fun onFailure(call: Call<CharacterData>, t: Throwable) {

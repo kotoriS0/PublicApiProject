@@ -97,7 +97,10 @@ class SecondListActivity : AppCompatActivity() {
                             response: Response<CharacterData>
                         ) {
                             Log.d(TAG, "character onResponse: ${response.body()}")
-                            adapter.dataSet?.add(response.body()?.name!!)
+                            var add = response.body()?.name!!
+                            if(add == "Traveler")
+                                add = "Traveler (" + response.body()?.vision + ")"
+                            adapter.dataSet?.add(add)
                             adapter.dataSet?.sort()
                             adapter.notifyDataSetChanged()
                         }
