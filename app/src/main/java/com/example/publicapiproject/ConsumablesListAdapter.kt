@@ -1,16 +1,19 @@
 package com.example.publicapiproject
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
 class ConsumablesListAdapter(var dataSet: MutableList<List<String>>, var category: String) : RecyclerView.Adapter<ConsumablesListAdapter.ViewHolder>() {
     companion object {
         val TAG = "ConsumablesListAdapter"
+        val EXTRA_KEY = "key"
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -32,13 +35,23 @@ class ConsumablesListAdapter(var dataSet: MutableList<List<String>>, var categor
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        Log.d(TAG, "${dataSet[position]}")
         val item = dataSet[position][0]
         val type = dataSet[position][1]
-        Log.d(TAG, "$item / $dataSet")
+        val key = dataSet[position][2]
         viewHolder.textViewName.text = item
         viewHolder.textViewType.text = type
         viewHolder.layout.setOnClickListener {
-
+            when(category) {
+                "food" -> {
+                    val detailIntent = Intent(it.context, ConsumablesFoodDetailActivity::class.java)
+                    detailIntent.putExtra(EXTRA_KEY, key)
+                    it.context.startActivity(detailIntent)
+                }
+                "potions" -> {
+                    Toast.makeText(it.context, item, Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 

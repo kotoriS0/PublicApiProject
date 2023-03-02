@@ -10,6 +10,7 @@ data class ConsumablesFoodData(
     val type: String?,
     val effect: String?,
     val hasRecipe: Boolean?,
+    val proficiency: Int?,
     val description: String?,
     val recipe: List<Recipe>?
 ) : Parcelable {

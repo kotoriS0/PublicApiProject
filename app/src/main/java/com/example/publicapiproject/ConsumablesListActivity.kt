@@ -3,6 +3,7 @@ package com.example.publicapiproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.publicapiproject.databinding.ActivityConsumablesListBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,10 +40,13 @@ class ConsumablesListActivity : AppCompatActivity() {
                     response: Response<Map<String, ConsumablesFoodData>>
                 ) {
                     if(response != null) {
-                        response.body()?.forEach { item -> namesList.add(listOf(item.value.name!!, item.value.type!!))}
+                        response.body()?.forEach { item -> namesList.add(listOf(item.value.name!!,
+                            item.value.type?.replace(" Dish", "")!!, item.key))}
                     }
                     Log.d(TAG, "food onResponse: $namesList")
                     adapter = ConsumablesListAdapter(namesList, category)
+                    binding.recyclerViewConsumablesList.adapter = adapter
+                    binding.recyclerViewConsumablesList.layoutManager = LinearLayoutManager(this@ConsumablesListActivity)
                 }
 
                 override fun onFailure(call: Call<Map<String, ConsumablesFoodData>>, t: Throwable) {
@@ -59,9 +63,11 @@ class ConsumablesListActivity : AppCompatActivity() {
                     response: Response<Map<String, ConsumablesPotionsData>>
                 ) {
                     if(response != null) {
-                        response.body()?.forEach { item -> namesList.add(listOf(item.value.name!!, ""))}
+                        response.body()?.forEach { item -> namesList.add(listOf(item.value.name!!, getType(item.value.effect!!), item.key))}
                     }
                     adapter = ConsumablesListAdapter(namesList, category)
+                    binding.recyclerViewConsumablesList.adapter = adapter
+                    binding.recyclerViewConsumablesList.layoutManager = LinearLayoutManager(this@ConsumablesListActivity)
                 }
 
                 override fun onFailure(
@@ -70,5 +76,25 @@ class ConsumablesListActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    private fun getType(effect: String) : String {
+        var type = ""
+        type += with(effect) {when{
+            contains(" Anemo ") -> "Anemo"
+            contains(" Cryo ") -> "Cryo"
+            contains(" Dendro ") -> "Dendro"
+            contains(" Electro ") -> "Electro"
+            contains(" Geo ") -> "Geo"
+            contains(" Hydro ") -> "Hydro"
+            contains(" Pyro ") -> "Pyro"
+            else -> ""
+        }}
+        type += with(effect) {when{
+            contains(" RES ") -> " RES"
+            contains(" DMG ") -> " DMG"
+            else -> ""
+        }}
+        return type
     }
 }
