@@ -49,7 +49,9 @@ class ConsumablesListAdapter(var dataSet: MutableList<List<String>>, var categor
                     it.context.startActivity(detailIntent)
                 }
                 "potions" -> {
-                    Toast.makeText(it.context, item, Toast.LENGTH_SHORT).show()
+                    val detailIntent = Intent(it.context, ConsumablesPotionsDetailActivity::class.java)
+                    detailIntent.putExtra(EXTRA_KEY, key)
+                    it.context.startActivity(detailIntent)
                 }
             }
         }

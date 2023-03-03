@@ -16,6 +16,9 @@
         android:theme="@style/Theme.PublicApiProject"
         tools:targetApi="31">
         <activity
+            android:name=".ElementDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConsumablesPotionsDetailActivity"
             android:exported="false" />
         <activity

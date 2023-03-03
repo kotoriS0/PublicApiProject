@@ -13,7 +13,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
-        android:text="TextView"
+        android:text="Loading..."
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="TextView"
+        android:text="None"
         app:layout_constraintEnd_toEndOf="@+id/textView_consumablesPostionDetail_name"
         app:layout_constraintStart_toStartOf="@+id/textView_consumablesPostionDetail_name"
         app:layout_constraintTop_toBottomOf="@+id/textView_consumablesPostionDetail_name" />
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:text="TextView"
+        android:text="0"
         app:layout_constraintStart_toEndOf="@+id/textView_consumablesPotionsDetail_rarityLabel"
         app:layout_constraintTop_toTopOf="@+id/textView_consumablesPotionsDetail_rarityLabel" />
 
@@ -50,4 +50,23 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView_ConsumablesPotionDetail_effect"
         app:layout_constraintTop_toBottomOf="@+id/textView_ConsumablesPotionDetail_effect" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_consumablesPotionDetail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_consumablesPotionsDetail_craftingLabel" />
+
+    <TextView
+        android:id="@+id/textView_consumablesPotionsDetail_craftingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Crafting:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_consumablesPotionsDetail_rarityLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_consumablesPotionsDetail_rarityLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

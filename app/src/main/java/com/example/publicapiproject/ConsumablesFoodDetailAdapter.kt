@@ -14,9 +14,9 @@ class ConsumablesFoodDetailAdapter(var dataSet: List<ConsumablesFoodData.Recipe>
         val layout: ConstraintLayout
 
         init {
-            textViewItem = view.findViewById(R.id.textView_itemConsumablesFoodDetail_item)
-            textViewQuantity = view.findViewById(R.id.textView_itemConsumablesFoodDetail_quantity)
-            layout = view.findViewById(R.id.layout_consumablesFoodDetailItem)
+            textViewItem = view.findViewById(R.id.textView_itemConsumablesPotionsDetail_item)
+            textViewQuantity = view.findViewById(R.id.textView_itemConsumablesPotionsDetail_quantity)
+            layout = view.findViewById(R.id.layout_consumablesPotionsDetailItem)
         }
     }
 

@@ -3,20 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_artifact_detail.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_artifact_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_artifact_list.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_character_detail.xml" value="0.27455919395465994" />
+        <entry key="app/src/main/res/layout/activity_character_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_consumables_food_detail.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_consumables_list.xml" value="0.1703125" />
+        <entry key="app/src/main/res/layout/activity_consumables_list.xml" value="0.10435663627152988" />
         <entry key="app/src/main/res/layout/activity_consumables_potions_detail.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_element_detail.xml" value="0.213768115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_second_list.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_character_detail.xml" value="0.1703125" />
-        <entry key="app/src/main/res/layout/item_consumables_food_detail.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/item_consumables_list.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_character_detail.xml" value="0.213768115942029" />
+        <entry key="app/src/main/res/layout/item_consumables_food_detail.xml" value="0.19731509625126648" />
+        <entry key="app/src/main/res/layout/item_consumables_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_consumables_potions_detail.xml" value="0.19731509625126648" />
+        <entry key="app/src/main/res/layout/item_element_detail.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/item_main_menu.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_second_list.xml" value="0.13451086956521738" />
-        <entry key="app/src/main/res/layout/item_skill_talent.xml" value="0.1703125" />
+        <entry key="app/src/main/res/layout/item_skill_talent.xml" value="0.335" />
       </map>
     </option>
   </component>
