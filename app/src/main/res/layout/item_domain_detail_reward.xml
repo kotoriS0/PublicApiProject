@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_domainDetailReward"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_levelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Level:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailReward_levelLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailReward_levelLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_adventureXpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Adventure Xp:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailReward_adventureXp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailReward_levelLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_adventureXp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailReward_companionshipXpLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailReward_adventureXpLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailReward_adventureXpLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_companionshipXp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailReward_companionshipXpLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailReward_companionshipXpLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_companionshipXpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Companionship Xp:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailReward_companionshipXp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailReward_adventureXp"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailReward_adventureXp" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_moraLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Mora:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetailReward_adventureXpLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailReward_adventureXpLabel" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_domainDetailReward"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailReward_dropsLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_mora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailReward_moraLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailReward_moraLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailReward_dropsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Drops:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetailReward_moraLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailReward_moraLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

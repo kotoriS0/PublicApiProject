@@ -10,7 +10,8 @@ data class DomainData(
     val description: String?,
     val location: String?,
     val nation: String?,
-    val requirements: List<Requirements>
+    val recommendedElements: List<String>?,
+    val requirements: List<Requirements>?
 ) : Parcelable {
     @Parcelize
     data class Requirements(

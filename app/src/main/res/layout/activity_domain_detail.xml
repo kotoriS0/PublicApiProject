@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DomainDetailActivity">
+
+    <TextView
+        android:id="@+id/textView_domainDetail_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Loading..."
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textView_domainDetail_name"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetail_typeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_type" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetail_typeLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetail_typeLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textView_domainDetail_description"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetail_locationLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetail_locationLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_requirementsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Requirements"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetail_rewardsLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_recommendedElements" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_typeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Type:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetail_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_name" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Location:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetail_description"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_description" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_recommendedElementsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Recommended Elements:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetail_locationLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_location" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_rewardsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rewards"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetail_requirementsLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetail_requirementsLabel" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_requirementsLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_recommendedElements"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textView_domainDetail_location"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetail_recommendedElementsLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetail_recommendedElementsLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_monThurs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Mon/Thurs"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetail_tuesFri"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_requirementsLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_tuesFri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tues/Fri"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetail_wedSat"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetail_monThurs"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetail_monThurs" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_wedSat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wed/Sat"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetail_sun"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetail_tuesFri"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetail_tuesFri" />
+
+    <TextView
+        android:id="@+id/textView_domainDetail_sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sun"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetail_wedSat"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetail_wedSat" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_domainDetail_days"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:constraint_referenced_ids="textView_domainDetail_tuesFri,textView_domainDetail_sun,textView_domainDetail_wedSat,textView_domainDetail_monThurs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetail_requirementsLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

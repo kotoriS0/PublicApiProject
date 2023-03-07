@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_domainDetailRewardDrop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView_domainDetailRewardDrop_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Loading..."
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRewardDrop_minLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Min:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRewardDrop_min"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetailRewardDrop_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailRewardDrop_name" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRewardDrop_maxLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Max:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRewardDrop_max"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRewardDrop_min"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRewardDrop_min" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRewardDrop_min"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRewardDrop_maxLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRewardDrop_minLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRewardDrop_minLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRewardDrop_max"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRewardDrop_maxLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRewardDrop_maxLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

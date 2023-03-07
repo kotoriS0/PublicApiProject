@@ -48,7 +48,6 @@ class ConsumablesFoodDetailActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Map<String, ConsumablesFoodData>>, t: Throwable) {
-                TODO("Not yet implemented")
             }
         })
     }

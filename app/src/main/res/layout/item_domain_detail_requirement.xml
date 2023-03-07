@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_domainDetailRequirement"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_levelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Level:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_levelLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_levelLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_advRankLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Adventure Rank:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRequirement_advRank"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailRequirement_levelLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_advRank"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRequirement_recommendedLevelLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_advRankLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_advRankLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_recommendedLevelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Recommended Level:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRequirement_recommendedLevel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_advRank"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_advRank" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_recommendedLevel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_recommendedLevelLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_recommendedLevelLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_leyLineDisorderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Ley Line Disorder:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetailRequirement_advRankLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailRequirement_recommendedLevelLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRequirement_leyLineDisorder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="15dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetailRequirement_leyLineDisorderLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailRequirement_leyLineDisorderLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
