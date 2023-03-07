@@ -61,7 +61,9 @@ class SecondListAdapter(var dataSet: MutableList<String>?, var category: String,
 
                 }
                 "Elements" -> {
-
+                    val detailIntent = Intent(it.context, ElementDetailActivity::class.java)
+                    detailIntent.putExtra(EXTRA_ITEM, item?.toLowerCase())
+                    it.context.startActivity(detailIntent)
                 }
                 "Enemies" -> {
 

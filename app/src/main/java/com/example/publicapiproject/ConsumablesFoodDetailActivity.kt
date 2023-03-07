@@ -24,7 +24,7 @@ class ConsumablesFoodDetailActivity : AppCompatActivity() {
         getFoodDataByKeyApiCall(key!!)
     }
 
-    fun getFoodDataByKeyApiCall(key: String) {
+    private fun getFoodDataByKeyApiCall(key: String) {
         val dataService = RetrofitHelper.getInstance().create(DataService::class.java)
         val foodDataCall = dataService.getConsumablesFood()
 
