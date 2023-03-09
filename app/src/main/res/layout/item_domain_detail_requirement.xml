@@ -27,28 +27,28 @@
         app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_levelLabel" />
 
     <TextView
-        android:id="@+id/textView_domainDetailRequirement_advRankLabel"
+        android:id="@+id/textView_domainDetailRequirement_adventureRankLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:text="Adventure Rank:"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRequirement_advRank"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRequirement_adventureRank"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailRequirement_levelLabel" />
 
     <TextView
-        android:id="@+id/textView_domainDetailRequirement_advRank"
+        android:id="@+id/textView_domainDetailRequirement_adventureRank"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:text="0"
         app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRequirement_recommendedLevelLabel"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_advRankLabel"
-        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_advRankLabel" />
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_adventureRankLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_adventureRankLabel" />
 
     <TextView
         android:id="@+id/textView_domainDetailRequirement_recommendedLevelLabel"
@@ -59,8 +59,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRequirement_recommendedLevel"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_advRank"
-        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_advRank" />
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRequirement_adventureRank"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRequirement_adventureRank" />
 
     <TextView
         android:id="@+id/textView_domainDetailRequirement_recommendedLevel"
@@ -81,7 +81,7 @@
         android:layout_marginTop="15dp"
         android:text="Ley Line Disorder:"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView_domainDetailRequirement_advRankLabel"
+        app:layout_constraintStart_toStartOf="@+id/textView_domainDetailRequirement_adventureRankLabel"
         app:layout_constraintTop_toBottomOf="@+id/textView_domainDetailRequirement_recommendedLevelLabel" />
 
     <TextView

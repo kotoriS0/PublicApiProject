@@ -1,5 +1,6 @@
 package com.example.publicapiproject
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.publicapiproject.SecondListAdapter.Companion.EXTRA_ITEM
@@ -12,6 +13,7 @@ class DomainDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDomainDetailBinding
     lateinit var adapter: DomainDetailAdapter
 
+    lateinit var item: DomainData
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDomainDetailBinding.inflate(layoutInflater)
@@ -27,16 +29,25 @@ class DomainDetailActivity : AppCompatActivity() {
 
         domainDataCall.enqueue(object : Callback<DomainData> {
             override fun onResponse(call: Call<DomainData>, response: Response<DomainData>) {
-                val item = response.body()!!
+                item = response.body()!!
                 binding.textViewDomainDetailName.text = item.name
                 binding.textViewDomainDetailType.text = item.type
                 binding.textViewDomainDetailDescription.text = item.description
                 binding.textViewDomainDetailLocation.text = item.location
                 binding.textViewDomainDetailRecommendedElements.text = item.recommendedElements.toString()
+
+                changeRecyclerView("Requirements", "none")
+                binding.textViewDomainDetailRequirementsLabel.setTextColor(Color.BLACK)
             }
 
             override fun onFailure(call: Call<DomainData>, t: Throwable) {
             }
         })
+    }
+
+    fun changeRecyclerView(selected: String, day: String) {
+        if(day == "none") {
+            adapter = DomainDetailAdapter(item, )
+        }
     }
 }

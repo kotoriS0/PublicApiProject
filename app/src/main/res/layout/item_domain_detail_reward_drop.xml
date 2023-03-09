@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
         android:text="Loading..."
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRewardDrop_rarityLabel"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,4 +65,27 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRewardDrop_maxLabel"
         app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRewardDrop_maxLabel" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRewardDrop_rarityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Rarity:"
+        app:layout_constraintEnd_toStartOf="@+id/textView_domainDetailRewardDrop_rarity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRewardDrop_name"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRewardDrop_name" />
+
+    <TextView
+        android:id="@+id/textView_domainDetailRewardDrop_rarity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView_domainDetailRewardDrop_rarityLabel"
+        app:layout_constraintTop_toTopOf="@+id/textView_domainDetailRewardDrop_rarityLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>
