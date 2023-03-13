@@ -1,6 +1,6 @@
 package com.example.publicapiproject
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,30 +10,33 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class DomainDetailAdapter(var domainData: DomainData, var selected: String, var day: String) : RecyclerView.Adapter<DomainDetailAdapter.ViewHolder>() {
+    companion object {
+        const val TAG = "DomainDetailAdapter"
+    }
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textViewLevelRequire: TextView
         val textViewRankRequire: TextView
         val textViewRecLevelRequire: TextView
         val textViewLeyLineRequire: TextView
-        val recyclerViewRequireDrops: RecyclerView
 
         val textViewLevelReward: TextView
         val textViewAdventureXpReward: TextView
         val textViewCompanionshipXpReward: TextView
         val textViewMoraReward: TextView
+        val recyclerViewRewardDrops: RecyclerView
 
         init {
             textViewLevelRequire = view.findViewById(R.id.textView_domainDetailRequirement_level)
             textViewRankRequire = view.findViewById(R.id.textView_domainDetailRequirement_adventureRank)
             textViewRecLevelRequire = view.findViewById(R.id.textView_domainDetailRequirement_recommendedLevel)
             textViewLeyLineRequire = view.findViewById(R.id.textView_domainDetailRequirement_leyLineDisorder)
-            recyclerViewRequireDrops = view.findViewById(R.id.recyclerView_domainDetailReward)
-        }
-        init {
+
             textViewLevelReward = view.findViewById(R.id.textView_domainDetailReward_level)
             textViewAdventureXpReward = view.findViewById(R.id.textView_domainDetailReward_adventureXp)
             textViewCompanionshipXpReward = view.findViewById(R.id.textView_domainDetailReward_companionshipXp)
             textViewMoraReward = view.findViewById(R.id.textView_domainDetailReward_mora)
+            recyclerViewRewardDrops = view.findViewById(R.id.recyclerView_domainDetailReward)
         }
     }
 
@@ -41,14 +44,19 @@ class DomainDetailAdapter(var domainData: DomainData, var selected: String, var 
         lateinit var view:View
         when(selected) {
             "Rewards" -> {
+                Log.d(TAG, "Reward view")
+
                 view = LayoutInflater.from(viewGroup.context)
                     .inflate(R.layout.item_domain_detail_reward, viewGroup, false)
             }
             else -> {
+                Log.d(TAG, "Require view")
+
                 view = LayoutInflater.from(viewGroup.context)
                     .inflate(R.layout.item_domain_detail_requirement, viewGroup, false)
             }
         }
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
@@ -79,11 +87,12 @@ class DomainDetailAdapter(var domainData: DomainData, var selected: String, var 
                 viewHolder.textViewCompanionshipXpReward.text = item.companionshipExperience.toString()
                 viewHolder.textViewMoraReward.text = item.mora.toString()
 
-                viewHolder.recyclerViewRequireDrops.adapter = adapter
-                viewHolder.recyclerViewRequireDrops.layoutManager = LinearLayoutManager(viewHolder.textViewLevelRequire.context)
+                viewHolder.recyclerViewRewardDrops.adapter = adapter
+                viewHolder.recyclerViewRewardDrops.layoutManager = LinearLayoutManager(viewHolder.textViewLevelRequire.context)
             }
             else -> {
                 val item = domainData.requirements!![position]
+                Log.d(TAG, "$item")
                 viewHolder.textViewLevelRequire.text = item.level.toString()
                 viewHolder.textViewRankRequire.text = item.adventureRank.toString()
                 viewHolder.textViewRecLevelRequire.text = item.recommendedLevel.toString()
